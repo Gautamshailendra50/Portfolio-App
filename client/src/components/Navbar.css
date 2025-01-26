@@ -1,0 +1,108 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #1f2937;
+  position: relative; /* For positioning toggle icon */
+  z-index: 10;
+}
+
+/* Logo Styles */
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Nav Links (Desktop View) */
+.navbar .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* Nav Links Styles */
+.navbar .nav-links a {
+  color: #c9d1d9;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Underline Animation */
+.navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #58a6ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover::after {
+  width: 100%;
+}
+
+.navbar .nav-links a:hover {
+  color: #58a6ff;
+}
+
+/* Toggle Icon (Hidden by Default for Desktop) */
+/* Ensure the toggle button displays correctly */
+.navbar-toggler {
+  border: none; /* Remove the default border */
+}
+
+/* Customize the toggle icon color */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Show Toggle Button */
+  .navbar .toggle {
+    display: block;
+  }
+
+  /* Hide Nav Links by Default */
+  .navbar .nav-links {
+    display: none; /* Hidden initially */
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1f2937;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+
+  /* Show Nav Links When Navbar is Expanded */
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  /* Adjust Link Text for Mobile */
+  .navbar .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Explicit Styles for Toggle Button */
+.navbar-toggler {
+  border: none; /* Remove border from toggle button */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Set white toggle icon */
+}

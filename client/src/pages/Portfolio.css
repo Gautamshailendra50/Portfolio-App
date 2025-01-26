@@ -1,0 +1,126 @@
+.portfolio {
+  padding: 2rem;
+  background-color: #1f2937; /* Transparent black background */
+  color: #fff; /* Adjust text color for better contrast */
+  text-align: center;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff; /* White text for contrast */
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center; /* Center grid items horizontally */
+  align-items: center; /* Center grid items vertically */
+  max-width: 1200px; /* Restrict maximum width for better alignment */
+  width: 100%; /* Ensure grid takes full width */
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent white for cards */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ddd; /* Lighter text for better readability */
+}
+
+.project-card a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+  color: #1f78d1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .portfolio h2 {
+    font-size: 2rem; /* Adjust heading size for tablets */
+  }
+
+  .projects {
+    gap: 1rem; /* Reduce gap between cards */
+  }
+
+  .project-card {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio h2 {
+    font-size: 1.8rem; /* Smaller headings for mobile */
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust card size */
+    gap: 1rem; /* Reduce gap for mobile */
+  }
+
+  .project-card {
+    padding: 0.8rem; /* Compact padding for mobile */
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem; /* Smaller card title */
+  }
+
+  .project-card p {
+    font-size: 0.9rem; /* Smaller text for mobile readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio h2 {
+    font-size: 1.5rem; /* Even smaller headings for very small screens */
+  }
+
+  .projects {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    gap: 0.8rem; /* Minimized gap for smaller devices */
+  }
+
+  .project-card {
+    padding: 0.5rem; /* Compact padding for small screens */
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem; /* Smaller card title */
+  }
+
+  .project-card p {
+    font-size: 0.8rem; /* Smaller text for better readability on small screens */
+  }
+}
